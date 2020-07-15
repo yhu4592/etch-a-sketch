@@ -1,15 +1,26 @@
 <!doctype html>
 <html>
     <head>
-
+        <link rel = "stylesheet" href = "style.css">
     </head>
     <title>
 
     </title>
     <body>
-
+        <div id = "container">
+            
+        </div>
+            
     </body>
-    <script>
+    <script type = "text/javascript">
+        const container = document.querySelector('#container');
         
+        for (var i = 0; i < 16; i++){
+            let boxes = document.createElement("div");
+            boxes.classList.add("boxes");
+            boxes.setAttribute("style", "border-color: black; background-color: white;");
+            container.appendChild(boxes);
+            
+        }
     </script>
 </html>
