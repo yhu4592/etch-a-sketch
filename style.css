@@ -1,0 +1,23 @@
+#container{
+    display: grid;
+    grid-template-columns: repeat(4, 25%);
+    height: 400px;
+    width:50%;
+    position: relative;
+    padding: 10% 10% 10% 10%;
+    
+}
+.boxes{
+    background-color: red;
+    border-style: solid;
+    border-color: black;
+    height: 100%;
+    width: 100%;
+}
+.default{
+    background-color:white;
+    border-style: solid;
+    border-color: black;
+    height: 100%;
+    width: 100%;
+}
