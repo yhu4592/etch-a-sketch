@@ -1,26 +1,26 @@
 <!doctype html>
-<html>
+    <html>
     <head>
-        <link rel = "stylesheet" href = "style.css">
+            <link rel = "stylesheet" href = "style.css">
     </head>
-    <title>
-
-    </title>
+    <title> </title>
     <body>
         <div id = "container">
-            
         </div>
-            
+        <button id = "clear"></button>
     </body>
     <script type = "text/javascript">
-        const container = document.querySelector('#container');
-        
-        for (var i = 0; i < 16; i++){
-            let boxes = document.createElement("div");
-            boxes.classList.add("boxes");
-            boxes.setAttribute("style", "border-color: black; background-color: white;");
-            container.appendChild(boxes);
-            
-        }
+    const container = document.querySelector('#container');
+    for (var i = 0; i < 16; i++){
+        let boxes = document.createElement("div");
+        boxes.classList.add("boxes");
+        boxes.setAttribute("style", "border-color: black;");
+        boxes.addEventListener('mouseover', () => {
+            boxes.style.backgroundColor = "black";
+        })
+        container.appendChild(boxes);
+    }
+    const btn = document.querySelector('#clear');
+    
     </script>
-</html>
+    </html>
