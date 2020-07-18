@@ -2,16 +2,20 @@
     display: grid;
     height: 200px;
     width: 200px;
-    position: fixed;
-    border: solid black 1px;
+    position: relative;
+    border: solid red 1px;
     grid-auto-rows: auto;
     grid-auto-columns: auto;
 }
 
 .boxes{
     background-color:white;
-    border-style: solid;
-    border-color: black;
-    height: 100%;
-    width: 50%;
+    border: solid black 1px;
+    height: 1fr;
+    width: 1fr;
+}
+
+#clear{
+    position:relative;
+    bottom:-10px;
 }
