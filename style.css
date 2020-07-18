@@ -1,23 +1,17 @@
 #container{
     display: grid;
-    grid-template-columns: repeat(4, 25%);
-    height: 400px;
-    width:50%;
-    position: relative;
-    padding: 10% 10% 10% 10%;
-    
+    height: 200px;
+    width: 200px;
+    position: fixed;
+    border: solid black 1px;
+    grid-auto-rows: auto;
+    grid-auto-columns: auto;
 }
+
 .boxes{
-    background-color: red;
-    border-style: solid;
-    border-color: black;
-    height: 100%;
-    width: 100%;
-}
-.default{
     background-color:white;
     border-style: solid;
     border-color: black;
     height: 100%;
-    width: 100%;
+    width: 50%;
 }
