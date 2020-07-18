@@ -7,20 +7,30 @@
     <body>
         <div id = "container">
         </div>
-        <button id = "clear"></button>
+        <button id = "clear">Clear</button>
     </body>
     <script type = "text/javascript">
     const container = document.querySelector('#container');
-    for (var i = 0; i < 16; i++){
-        let boxes = document.createElement("div");
-        boxes.classList.add("boxes");
-        boxes.setAttribute("style", "border-color: black;");
-        boxes.addEventListener('mouseover', () => {
-            boxes.style.backgroundColor = "black";
-        })
-        container.appendChild(boxes);
-    }
-    const btn = document.querySelector('#clear');
     
+    function generateGrid(rowsAndColumns = 16){
+        for (var i = 0; i < rowsAndColumns; i++){
+            let boxes = document.createElement("div");
+            boxes.classList.add("boxes");
+            boxes.setAttribute("style", "border-color: black;");
+            boxes.addEventListener('mouseover', () => {
+                boxes.style.backgroundColor = "black";
+            })
+            container.appendChild(boxes);
+        }
+    }
+    generateGrid();
+    const btn = document.querySelector('#clear');
+    function changeToDefault(){
+        let nodeList = container.childNodes;
+        nodeList.forEach((node) => {
+            node.classList.toggle("default");
+        })
+    }
+    btn.addEventListener('onclick', changeToDefault);
     </script>
     </html>
