@@ -7,10 +7,14 @@
     <body>
         <div id = "container">
         </div>
-        <button id = "clear">Clear</button>
+        <button id = "clear" onclick="clearGrid(); generateGrid();">Clear</button>
+        <button id = "custom" onclick = "askCustomGrid()">Custom</button>
     </body>
     <script type = "text/javascript">
+    
     const container = document.querySelector('#container');
+    const custom = document.querySelector('#custom');
+    const btn = document.querySelector('#clear');
     
     function generateGrid(rowsAndColumns = 16){
         container.setAttribute('style', 'grid-template-columns: repeat(' + rowsAndColumns + ', 1fr); grid-template-rows: repeat(' + rowsAndColumns + ', 1fr;');
@@ -24,11 +28,34 @@
             container.appendChild(boxes);
         }
     }
-    generateGrid();
-    const btn = document.querySelector('#clear');
-    function clearGrid(){
-        document.boxes.backgroundColor = "white";
+    
+    function askCustomGrid(){
+        var number = prompt("Enter a custom number of rows and columns.");
+        console.log(typeof number);
+        while (typeof number !== "number" || number <= 0){
+            console.log("hi");
+            number = prompt("Please enter a valid value!");
+        }
+        
+        if(number !== null){
+            clearGrid();
+            generateGrid(number);
+        }
+        
+        
     }
-    btn.addEventListener('click', clearGrid());
+    
+    function clearGrid(){ //tutorial function
+        while(container.firstChild){
+            container.removeChild(container.firstChild);
+        }
+    }
+    generateGrid();
+    
+    
+    
+    
+    
+    
     </script>
     </html>
