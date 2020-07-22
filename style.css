@@ -1,7 +1,7 @@
 #container{
     display: grid;
-    height: 200px;
-    width: 200px;
+    height: 400px;
+    width: 400px;
     position: relative;
     border: solid red 1px;
     grid-auto-rows: auto;
@@ -14,6 +14,7 @@
     height: 1fr;
     width: 1fr;
 }
+
 
 #clear{
     position:relative;
