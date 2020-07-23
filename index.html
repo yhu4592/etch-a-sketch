@@ -7,9 +7,10 @@
     <body>
         <div id = "container">
         </div>
-        <button id = "clear" onclick="clearGrid(); generateGrid(number);">Clear</button>
+        <button id = "clear">Clear</button>
         <button id = "custom" onclick = "askCustomGrid()">Custom</button>
-        
+        <button id = "randomColor" onclick = "generateRandomGrid(number)">Random</button>
+        <button id = "black" onclick = "generateGrid(number)">Black</button>;
     </body>
     <script type = "text/javascript">
     
@@ -18,7 +19,7 @@
     const btn = document.querySelector('#clear');
     
     function generateGrid(rowsAndColumns = 16){
-        
+        clearGrid();
         container.setAttribute('style', 'grid-template-columns: repeat(' + rowsAndColumns + ', 1fr); grid-template-rows: repeat(' + rowsAndColumns + ', 1fr;');
         for (var i = 0; i < rowsAndColumns*rowsAndColumns; i++){
             let boxes = document.createElement("div");
@@ -29,6 +30,24 @@
             })
             container.appendChild(boxes);
         }
+        document.getElementById("clear").setAttribute("onClick", "clearGrid(); generateGrid(number)");
+    }
+    function generateRandomGrid(rowsAndColumns = 16){
+        clearGrid();
+        container.setAttribute('style', 'grid-template-columns: repeat(' + rowsAndColumns + ', 1fr); grid-template-rows: repeat(' + rowsAndColumns + ', 1fr;');
+        for (var i = 0; i < rowsAndColumns*rowsAndColumns; i++){
+            let boxes = document.createElement("div");
+            boxes.classList.add("boxes");
+            boxes.setAttribute("style", "border-color: black;");
+            boxes.addEventListener('mouseover', () => {
+                var red = Math.floor(Math.random()*256);
+                var green = Math.floor(Math.random()*256);
+                var blue = Math.floor(Math.random()*256);
+                boxes.style.backgroundColor = "rgb(" + Math.floor(Math.random()*256)+ "," + Math.floor(Math.random()*256) + "," + Math.floor(Math.random()*256) + ")";
+            })
+            container.appendChild(boxes);
+        }
+        document.getElementById("clear").setAttribute("onClick", "clearGrid(); generateRandomGrid(number)");
     }    
     function clearGrid(){ //tutorial function
         while(container.firstChild){
