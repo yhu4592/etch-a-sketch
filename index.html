@@ -5,12 +5,18 @@
     </head>
     <title> </title>
     <body>
-        <div id = "container">
-        </div>
-        <button id = "clear">Clear</button>
-        <button id = "custom" onclick = "askCustomGrid()">Custom</button>
-        <button id = "randomColor" onclick = "generateRandomGrid(number)">Random</button>
-        <button id = "black" onclick = "generateGrid(number)">Black</button>;
+        <div id = "sketchBoard">
+            <div id = "container">
+            </div>
+            <div id = "sideButtons">
+                <button id = "randomColor" onclick = "generateRandomGrid(number)">Random</button>
+                <button id = "black" onclick = "generateGrid(number)">Black</button>;
+            </div>
+            <div id = "bottomButtons">
+                <button id = "clear">Clear</button>
+                <button id = "custom" onclick = "askCustomGrid()">Custom</button>
+            </div>
+    </div>
     </body>
     <script type = "text/javascript">
     
@@ -35,6 +41,7 @@
     function generateRandomGrid(rowsAndColumns = 16){
         clearGrid();
         container.setAttribute('style', 'grid-template-columns: repeat(' + rowsAndColumns + ', 1fr); grid-template-rows: repeat(' + rowsAndColumns + ', 1fr;');
+        i
         for (var i = 0; i < rowsAndColumns*rowsAndColumns; i++){
             let boxes = document.createElement("div");
             boxes.classList.add("boxes");
@@ -58,9 +65,16 @@
     var number;
     function askCustomGrid(){
         number = prompt("Enter a custom number of rows and columns.");
-        number = parseInt(number);
-        clearGrid();
-        generateGrid(number);
+        while(isNaN(number)){
+            console.log(typeof parseInt(number));
+            number = prompt("Please enter a valid number.");
+        }
+        if (number !== null){
+            clearGrid();
+            generateGrid(parseInt(number));
+        }
+        
+        
     }
     
 
