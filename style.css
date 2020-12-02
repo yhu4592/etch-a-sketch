@@ -15,23 +15,6 @@ body {
     border-radius: 10%;
 }
 
-.decorButton1{
-    background-color: white;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: solid black 5px;
-}
-
-.decorButton2{
-    background-color: white;
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    border: solid black 5px;
-}
 
 #container{
     display: grid;
@@ -49,7 +32,7 @@ body {
 }
 
 #sideButtons{
-    position:absolute;
+    position:relative;
     border-color: blue;
 }
 
@@ -60,7 +43,7 @@ body {
 
 #clear{
     position:absolute;
-    bottom:70px;
+    bottom:20px;
 }
 
 #custom{
